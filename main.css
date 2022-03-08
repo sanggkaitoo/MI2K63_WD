@@ -1,0 +1,108 @@
+.flip-card {
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    perspective: 1000px;
+    margin-left: 4px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    /* background-color: #2980b9; */
+    color: white;
+    transform: rotateY(180deg);
+    font-family: myFont;
+    overflow: hidden;
+    background: linear-gradient(to left top, #8e78ff, #fc7d7b);
+}
+
+.flip-card-front img {
+    object-fit: cover;
+    height: 150px;
+    width: 100%;
+}
+
+.bg-web {
+    background-image: url(img/bg.png);
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.content__title {
+    font-family: myFont;
+    font-weight: 400;
+    font-size: 10vw;
+    margin: 10px 5px;
+    line-height: 1;
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+}
+
+.content__title .love {
+    position: absolute;
+    bottom: 55px;
+    left: 500px;
+}
+
+.content__title-sub {
+    color: #a2c62d;
+    font-size: 4vw;
+    display: block;
+    margin-left: 4vw;
+    line-height: 0.5;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(Pacifico-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    --color-text: #d05400;
+    --color-bg: #0c0c0c;
+    --color-link: #6b5537;
+    --color-link-hover: #fff;
+    --color-content-title-sub: #a2c62d;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    --cursor-stroke: #6b5537;
+    --cursor-fill: none;
+    --cursor-stroke-width: 1px;
+    font-family: bilo, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#autoplay {
+    opacity: 0;
+}
